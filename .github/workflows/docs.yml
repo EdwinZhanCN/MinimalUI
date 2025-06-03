@@ -1,15 +1,31 @@
-# GitHub Actions 示例：主分支的 docs/ 变动时自动部署
+name: Deploy Docs
+
 on:
     push:
         branches: [main]
-        paths: ["docs/**"]
+        paths: ["docs/**"] # 仅在 docs/ 目录变更时触发
+
 jobs:
     deploy:
         runs-on: ubuntu-latest
+        permissions:
+            contents: write # 关键权限！
         steps:
             - uses: actions/checkout@v4
-            - run: npm ci && npm run docs:build
-            - uses: peaceiris/actions-gh-pages@v3
+
+            - name: Install Node.js
+              uses: actions/setup-node@v4
               with:
-                  publish_dir: ./docs/.vitepress/dist
+                  node-version: 22
+
+            - name: Install Dependencies
+              run: npm ci
+
+            - name: Build VitePress
+              run: npm run docs:build # 确保此命令存在且正确
+
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./docs/.vitepress/dist # 确认路径匹配
