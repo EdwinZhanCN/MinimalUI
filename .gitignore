@@ -1,0 +1,81 @@
+# C++ specific
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.lib
+*.a
+*.out
+
+# Build directories
+build/
+Debug/
+Release/
+x64/
+cmake-build-*/
+
+# IDE specific
+.vscode/
+.idea/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
+
+# VitePress/Node.js
+node_modules/
+dist/
+.temp/
+.cache/
+.vitepress/cache
+.vitepress/dist
+
+# Dependency directories
+deps/
+vendor/
+
+# Compiler/linker generated
+*.ilk
+*.map
+*.exp
+*.pdb
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# Custom project specific
+coverage/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+docs/node_modules/
+
+# Development environment
+.env
+.env.local
+.env.*.local
+
+# Backup files
+*.bak
+*.swp
+*~

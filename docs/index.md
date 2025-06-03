@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "MinimalUI"
-  text: "Documentations of MinimalUI, A Cross-Platform UI Frame Work For SPI Displays"
-  tagline: My great project tagline
+  text: "A Cross-Platform UI Frame Work For SPI Displays"
+  tagline: Light, Fast, Deploy in a minute
   actions:
     - theme: brand
       text: Markdown Examples
@@ -22,4 +22,3 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
