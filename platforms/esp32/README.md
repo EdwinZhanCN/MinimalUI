@@ -41,3 +41,7 @@ alias get_idf='. $IDF_PATH/export.sh'
 
 Get start with [中文文档](https://docs.espressif.com/projects/esp-idf/zh_CN/v5.4.1/esp32/get-started/index.html)
 or [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/v5.4.1/esp32/get-started/index.html)
+
+## SPI
+
+Refer to [SPI Master Driver](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/spi_master.html)
