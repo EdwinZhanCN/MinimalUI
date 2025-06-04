@@ -45,3 +45,22 @@ or [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/v5.4.1/esp32/get-sta
 ## SPI
 
 Refer to [SPI Master Driver](https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/peripherals/spi_master.html)
+
+## GPIO
+Seed Studio ESP32 C6
+- RST -> GPIO 0 (White)
+- DC -> GPIO 1 (Green)
+- CS -> GPIO 2 (Orange)
+- GND -> GND (Black)
+- CLK -> GPIO 19  (Yellow)
+- DIN -> GPIO 18 (Blue)
+- VCC -> 3.3V (Red)
+
+ESP32 (SPI)	
+VCC 3.3V
+GND	GND
+DIN	(VSPI_MOSI)
+CLK	(VSPI_SCK)
+CS	(自定义CS)
+DC	(自定义)
+RST	(自定义)

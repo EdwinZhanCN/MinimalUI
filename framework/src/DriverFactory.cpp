@@ -1,18 +1,20 @@
-// framework/src/DriverFactory.cpp
-#include "../include/DriverFactory.h"
-#include <unordered_map>
+#include "DriverFactory.h"
 
-namespace {
-    std::unordered_map<DriverFactory::Platform, DriverFactory::CreatorFunc> creators;
-}
+namespace MinimalUI {
 
-GraphicsDriver* DriverFactory::createDriver(Platform platform) {
-    if (creators.find(platform) != creators.end()) {
-        return creators[platform]();
+// 静态成员初始化
+std::unordered_map<DriverType, DriverFactory::CreatorFunc> DriverFactory::creators;
+
+std::shared_ptr<GraphicsDriver> DriverFactory::createDriver(DriverType type) {
+    auto it = creators.find(type);
+    if (it != creators.end()) {
+        return it->second();
     }
-    return nullptr; // 或者抛出异常
+    return nullptr;
 }
 
-void DriverFactory::registerCreator(Platform platform, CreatorFunc creator) {
-    creators[platform] = creator;
+void DriverFactory::registerCreator(DriverType type, CreatorFunc creator) {
+    creators[type] = creator;
 }
+
+} // namespace MinimalUI
