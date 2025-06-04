@@ -30,7 +30,7 @@ cd ~/esp
 git clone -b v5.4.1 --recursive https://github.com/espressif/esp-idf.git esp-idf
 ```
 
-Add following command in the end of `~/.bashrc/` file
+Add following command in the end of `~/.bashrc` file, you may use `vi ~/.bashrc` to edit it.
 
 ```shell
 ...
