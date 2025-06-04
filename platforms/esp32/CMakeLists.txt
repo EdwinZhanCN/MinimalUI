@@ -17,3 +17,5 @@ project(MinimalUI_ESP32)
 # 设置项目特定的配置
 idf_build_set_property(COMPILE_OPTIONS "-Wall;-Wextra" APPEND)
 idf_build_set_property(COMPILE_DEFINITIONS "PLATFORM_ESP32=1" APPEND)
+
+include_directories("${CMAKE_CURRENT_SOURCE_DIR}/components")
