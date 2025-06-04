@@ -60,7 +60,7 @@ project-root/
 ## Contribute
 
 **IN COMMIT MESSAGE**, use following tags prefix:
-[Doc] - Documentation Update
-[BugFix] - Bug fixing
-[Refactor] - File/Project Refactoring
-[Feature] - Making Progress on Feature
+- [Doc] - Documentation Update
+- [BugFix] - Bug fixing
+- [Refactor] - File/Project Refactoring
+- [Feature] - Making Progress on Feature
