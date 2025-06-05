@@ -16,7 +16,7 @@ class DisplayController;
  * @brief ESP32 SPI驱动配置结构
  */
 struct ESP32_SPI_Config {
-    spi_host_device_t spi_host = HSPI_HOST;  // SPI主机
+    spi_host_device_t spi_host = SPI2_HOST;  // SPI主机
     int8_t dc_pin;      // 数据/命令引脚
     int8_t cs_pin;      // 片选引脚
     int8_t rst_pin;     // 复位引脚
@@ -24,7 +24,7 @@ struct ESP32_SPI_Config {
     int8_t sclk_pin;    // SCLK引脚
     int8_t miso_pin = -1; // MISO引脚，通常不需要
     uint32_t freq;      // SPI频率
-    uint8_t spi_mode = SPI_MODE0; // SPI模式
+    uint8_t spi_mode; // SPI模式
 };
 
 /**

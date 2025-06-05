@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <cstddef>  // This header defines size_t
 
 namespace MinimalUI {
 

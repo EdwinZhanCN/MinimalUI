@@ -1,6 +1,7 @@
 #pragma once
 
 #include "DisplayController.h"
+#include <iostream>
 
 namespace MinimalUI {
 

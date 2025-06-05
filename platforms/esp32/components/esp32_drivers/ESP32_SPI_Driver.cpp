@@ -73,7 +73,7 @@ bool ESP32_SPI_Driver::initSPI() {
     // 配置SPI设备
     spi_device_interface_config_t dev_cfg = {
         .mode = config_.spi_mode,
-        .clock_speed_hz = config_.freq,
+        .clock_speed_hz = static_cast<int>(config_.freq),
         .spics_io_num = -1, // 我们手动控制CS引脚
         .flags = 0,
         .queue_size = 7,
@@ -176,6 +176,7 @@ spi_transaction_t ESP32_SPI_Driver::createTransaction(const void* data, size_t l
     return t;
 }
 
+// 根据不同的显示控制器实现，获取屏幕宽度和高度
 int16_t ESP32_SPI_Driver::width() const {
     return controller_ ? controller_->getWidth() : 0;
 }
