@@ -12,7 +12,7 @@ hero:
       link: /getting-started?_immersive_translate_auto_translate=1
     - theme: alt
       text: View on GitHub
-      link: https://github.com/MinimalUI/MinimalUI
+      link: https://github.com/EdwinZhanCN/MinimalUI
 
 features:
   - title: 🚀 Multi-Platform Support
