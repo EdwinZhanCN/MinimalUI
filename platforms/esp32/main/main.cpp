@@ -14,13 +14,13 @@ MinimalUI::ESP32_SPI_Driver* createESP32Driver() {
     // 配置SPI接口
     ESP32_SPI_Config spi_config;
     spi_config.spi_host = SPI2_HOST;
-    spi_config.dc_pin = 1;      // 数据/命令引脚
-    spi_config.cs_pin = 2;      // 片选引脚
-    spi_config.rst_pin = 0;    // 复位引脚
-    spi_config.mosi_pin = 18;   // MOSI引脚
-    spi_config.sclk_pin = 19;   // SCLK引脚
+    spi_config.dc_pin = 3;      // 数据/命令引脚
+    spi_config.cs_pin = 4;      // 片选引脚
+    spi_config.rst_pin = 2;    // 复位引脚
+    spi_config.mosi_pin = 10;   // MOSI引脚
+    spi_config.sclk_pin = 8;   // SCLK引脚
     spi_config.miso_pin = -1;   // 不使用MISO
-    spi_config.freq = 20000000;  // 1MHz (OLED通常频率较低)
+    spi_config.freq = 80000000;  // 1MHz (OLED通常频率较低)
     spi_config.spi_mode = 0;    // SPI模式0
 
     // 配置SSD1309控制器

@@ -57,25 +57,3 @@ driver.display();
 | ESP32 | ESP32, ESP32-S3, ESP32-C6 | SSD1309, SSD1306 | ✅ Active |
 | STM32 | STM32F4, STM32H7 | SSD1306, ILI9341 | 🚧 In Progress |
 | Jetson | Jetson Nano, Xavier | Framebuffer based | 🚧 Planned |
-
-## Why MinimalUI?
-
-**🎯 Built for Embedded Systems**
-- Designed specifically for resource-constrained environments
-- Minimal RAM usage with efficient frame buffering
-- Real-time performance considerations
-
-**🔌 Hardware Abstraction**
-- Clean separation between UI logic and hardware implementation
-- Easy to port to new platforms and display controllers
-- Consistent API across all supported platforms
-
-**📱 Modern C++ Design**
-- RAII-based resource management
-- Smart pointers for memory safety
-- Template-based component system
-
-**🧪 Production Ready**
-- Extensively tested on real hardware
-- Comprehensive error handling
-- Detailed documentation and examples
