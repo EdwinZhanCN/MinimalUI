@@ -1,7 +1,6 @@
 #include <esp_log.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
-#include <esp_sleep.h>
 #include "../components/esp32_drivers/ESP32_SPI_Driver.h"
 #include "../components/esp32_drivers/controllers/SSD1309Controller.h"
 
@@ -14,13 +13,13 @@ MinimalUI::ESP32_SPI_Driver* createESP32Driver() {
     // 配置SPI接口
     ESP32_SPI_Config spi_config;
     spi_config.spi_host = SPI2_HOST;
-    spi_config.dc_pin = 3;      // 数据/命令引脚
-    spi_config.cs_pin = 4;      // 片选引脚
-    spi_config.rst_pin = 2;    // 复位引脚
-    spi_config.mosi_pin = 10;   // MOSI引脚
-    spi_config.sclk_pin = 8;   // SCLK引脚
+    spi_config.dc_pin = 1;      // 数据/命令引脚
+    spi_config.cs_pin = 2;      // 片选引脚
+    spi_config.rst_pin = 0;    // 复位引脚
+    spi_config.mosi_pin = 18;   // MOSI引脚
+    spi_config.sclk_pin = 19;   // SCLK引脚
     spi_config.miso_pin = -1;   // 不使用MISO
-    spi_config.freq = 80000000;  // 1MHz (OLED通常频率较低)
+    spi_config.freq = 1000000;  // 1MHz (OLED通常频率较低)
     spi_config.spi_mode = 0;    // SPI模式0
 
     // 配置SSD1309控制器
@@ -139,32 +138,9 @@ void runAllTests(ESP32_SPI_Driver* driver) {
     ESP_LOGI(TAG, "All test patterns completed");
 }
 
-// 保活任务 - 防止系统进入睡眠
-void keepAliveTask(void* parameter) {
-    ESP_LOGI(TAG, "Keep-alive task started");
-    
-    while (1) {
-        // 发送一个字符到串口保持USB连接活跃
-        printf(".");
-        fflush(stdout);
-        
-        // 等待10秒
-        vTaskDelay(pdMS_TO_TICKS(10000));
-    }
-}
-
 // ESP32 app_main入口点
 extern "C" void app_main(void) {
     ESP_LOGI(TAG, "MinimalUI ESP32 Demo Starting");
-    
-    // 简单禁用睡眠功能
-    ESP_LOGI(TAG, "Disabling sleep modes...");
-    esp_sleep_disable_wakeup_source(ESP_SLEEP_WAKEUP_ALL);
-    ESP_LOGI(TAG, "All sleep wakeup sources disabled");
-    
-    // 创建保活任务
-    xTaskCreate(keepAliveTask, "KeepAlive", 2048, NULL, 1, NULL);
-    ESP_LOGI(TAG, "Keep-alive task created");
     
     // 创建ESP32 SPI驱动
     ESP32_SPI_Driver* driver = createESP32Driver();
